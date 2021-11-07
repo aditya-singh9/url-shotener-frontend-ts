@@ -46,7 +46,7 @@ function URLShortenerForm() {
         <div className="link-div">
           <p className="link">
             {shortUrl && (
-              <a href={`/${shortUrl?.shortId}`} target="_blank">
+              <a href={`/${shortUrl?.shortId}`} target="_blank" rel="noreferrer">
                 {window.location.origin}/{shortUrl?.shortId}
               </a>
             )}
@@ -55,7 +55,7 @@ function URLShortenerForm() {
         <div className="name-div">
           <p className="name">
             Crafted by
-            <a href="https://github.com/aditya-singh9" target="_blank">
+            <a href="https://github.com/aditya-singh9" target="_blank" rel="noreferrer">
               <span> Aditya</span>.
             </a>
           </p>

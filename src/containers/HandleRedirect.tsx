@@ -4,7 +4,7 @@ import { useRouteMatch } from "react-router-dom";
 import { Spinner, Box } from "@chakra-ui/react";
 
 const SERVER_ENDPOINT =
-  process.env.REACT_APP_SERVER_ENDPOINT || "http://localhost:4000";
+  process.env.REACT_APP_SERVER_ENDPOINT || "https://urlshotener-ts.herokuapp.com/";
 
 function HandleRedirectContainer() {
   const [destination, setDestination] = useState<null | string>(null);

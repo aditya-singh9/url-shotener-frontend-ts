@@ -21,27 +21,8 @@ function URLShortenerForm() {
 
     setShortUrl(result);
   }
-  async function copyURl() {
-    
-  }
 
   return (
-    // <Box pos="relative" zIndex="2" backgroundColor="#f7f7f7" padding="6" textColor="black" borderRadius="5px" boxShadow="dark-lg">
-    //   <form onSubmit={handleSubmit}>
-    //     <InputGroup borderColor="black" textColor="black" >
-    //       <Input
-    //         onChange={(e: any) => setDestination(e.target.value)}
-    //         placeholder="https://example.com"
-    //       />
-    //       <Button type="submit">CREATE</Button>
-    //     </InputGroup>
-    //   </form>
-    //   {shortUrl && (
-    //     <a href={`/${shortUrl?.shortId}`}>
-    //       {window.location.origin}/{shortUrl?.shortId}
-    //     </a>
-    //   )}
-    // </Box>
     <>
       <div className="outer">
         <div className="head-div">
@@ -55,7 +36,7 @@ function URLShortenerForm() {
               className="input"
               placeholder="Enter a URL"
               onChange={(e: any) => setDestination(e.target.value)}
-              // onSubmit={handleSubmit}
+              
             />
             <button type="submit" className="button">
               Create!

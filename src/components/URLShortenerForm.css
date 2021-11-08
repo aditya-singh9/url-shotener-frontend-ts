@@ -101,7 +101,13 @@ a {
 }
 .link-div {
   margin-left: 110px;
-  margin-top: 50px;
+  margin-top: 45px;
+  display: flex;
+}
+.copyBtn {
+  color: #0070f3;
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 550px) {

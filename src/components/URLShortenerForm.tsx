@@ -1,11 +1,13 @@
 // import { Input, Button, Box, InputGroup } from "@chakra-ui/react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SERVER_ENDPOINTS } from "../config";
 import "./URLShortenerForm.css";
+import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
 
 function URLShortenerForm() {
   const [destination, setDestination] = useState();
+  const divRef = useRef<HTMLAnchorElement>(null);
   const [shortUrl, setShortUrl] = useState<{
     shortId: string;
   } | null>(null);
@@ -20,6 +22,16 @@ function URLShortenerForm() {
       .then((resp) => resp.data);
 
     setShortUrl(result);
+  }
+  const copyUrl = () => {
+    const value: any = divRef.current?.innerHTML;
+    if (value) {
+      
+        navigator.clipboard.writeText(value);
+        // descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
+      
+    }
+
   }
 
   return (
@@ -36,26 +48,40 @@ function URLShortenerForm() {
               className="input"
               placeholder="Enter a URL"
               onChange={(e: any) => setDestination(e.target.value)}
-              
             />
             <button type="submit" className="button">
               Create!
             </button>
           </form>
         </div>
-        <div className="link-div">
-          <p className="link">
-            {shortUrl && (
-              <a href={`/${shortUrl?.shortId}`} target="_blank" rel="noreferrer">
-                {window.location.origin}/{shortUrl?.shortId}
-              </a>
-            )}
-          </p>
-        </div>
+
+        {shortUrl && (
+          <div className="link-div">
+            <p className="link">
+              <span>
+                <a
+                  href={`/${shortUrl?.shortId}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  ref={divRef}
+                >
+                  {window.location.origin}/{shortUrl?.shortId}
+                </a>
+              </span>
+              
+            </p>
+            <ContentCopyRoundedIcon className="copyBtn" onClick={copyUrl} />
+          </div>
+        )}
+
         <div className="name-div">
           <p className="name">
             Crafted by
-            <a href="https://github.com/aditya-singh9" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/aditya-singh9"
+              target="_blank"
+              rel="noreferrer"
+            >
               <span> Aditya</span>.
             </a>
           </p>

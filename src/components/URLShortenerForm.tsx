@@ -4,11 +4,11 @@ import { SERVER_ENDPOINTS } from "../config";
 import "./URLShortenerForm.css";
 import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
 import CopyToClipboard from "react-copy-to-clipboard";
+import toast, { Toaster } from 'react-hot-toast';
 
 function URLShortenerForm() {
   const [destination, setDestination] = useState();
   const divRef = useRef<HTMLAnchorElement>(null);
-  const [showText, setShowText] = useState(false)
   const [shortUrl, setShortUrl] = useState<{
     shortId: string;
   } | null>(null);
@@ -24,14 +24,17 @@ function URLShortenerForm() {
 
     setShortUrl(result);
   }
-  var finalURL = `${window.location.origin}/${shortUrl?.shortId}`
+  var finalURL = `${window.location.origin}/${shortUrl?.shortId}`;
   const text = () => {
-    setShowText(true)
-  }
+    toast.success('Copied!')
+  };
 
   return (
     <>
       <div className="outer">
+        <div>
+          <Toaster />
+        </div>
         <div className="head-div">
           <p className="head">
             Shorten <span>URLs</span>
@@ -58,23 +61,17 @@ function URLShortenerForm() {
                   href={`/${shortUrl?.shortId}`}
                   target="_blank"
                   rel="noreferrer"
-                  ref={divRef}                  
+                  ref={divRef}
                 >
                   {window.location.origin}/{shortUrl?.shortId}
                 </a>
-               
               </span>
             </p>
             <CopyToClipboard text={finalURL}>
-            <ContentCopyRoundedIcon className="copyBtn" onClick={text} />
+              <ContentCopyRoundedIcon className="copyBtn" onClick={text} />
             </CopyToClipboard>
-            {/* <div></div> */}
-            
           </div>
-          
         )}
-        <div>{ showText ? <span className="text-copied">Copied!</span> : null }</div>
-
         <div className="name-div">
           <p className="name">
             Crafted by

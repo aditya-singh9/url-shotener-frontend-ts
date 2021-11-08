@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/react";
 import URLShortenerForm from "../components/URLShortenerForm";
-// import Background from "../components/Background";
 
 function Home() {
   return (
@@ -12,7 +11,6 @@ function Home() {
       backgroundColor="white"
     >
       <URLShortenerForm />
-      {/* <Background /> */}
     </Box>
   );
 }

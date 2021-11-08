@@ -131,4 +131,10 @@ a {
   .head-div {
     margin-left: 80px;
   }
+  .link {
+    font-size: 15px;
+  }
+  .link-div {
+    margin-left: 45px;
+  }
 }

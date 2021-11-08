@@ -1,4 +1,3 @@
-// import { Input, Button, Box, InputGroup } from "@chakra-ui/react";
 import axios from "axios";
 import { useState, useRef } from "react";
 import { SERVER_ENDPOINTS } from "../config";
@@ -24,7 +23,7 @@ function URLShortenerForm() {
     setShortUrl(result);
   }
   const copyUrl = () => {
-    const value: any = divRef.current?.innerHTML;
+    const value = divRef.current?.innerText;
     if (value) {
       navigator.clipboard.writeText(value);
       alert("Copied!");
@@ -60,13 +59,14 @@ function URLShortenerForm() {
                   href={`/${shortUrl?.shortId}`}
                   target="_blank"
                   rel="noreferrer"
-                  ref={divRef}
+                  ref={divRef}                  
                 >
                   {window.location.origin}/{shortUrl?.shortId}
                 </a>
+               
               </span>
             </p>
-            <ContentCopyRoundedIcon className="copyBtn" onClick={copyUrl} />
+            <ContentCopyRoundedIcon className="copyBtn" onClick={copyUrl}/>
           </div>
         )}
 

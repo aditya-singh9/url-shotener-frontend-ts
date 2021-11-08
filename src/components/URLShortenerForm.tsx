@@ -26,13 +26,10 @@ function URLShortenerForm() {
   const copyUrl = () => {
     const value: any = divRef.current?.innerHTML;
     if (value) {
-      
-        navigator.clipboard.writeText(value);
-        // descRef.current.innerHTML = `<span class=${styles.span}>Text Copied!</span>`;
-      
+      navigator.clipboard.writeText(value);
+      alert("Copied!");
     }
-
-  }
+  };
 
   return (
     <>
@@ -68,7 +65,6 @@ function URLShortenerForm() {
                   {window.location.origin}/{shortUrl?.shortId}
                 </a>
               </span>
-              
             </p>
             <ContentCopyRoundedIcon className="copyBtn" onClick={copyUrl} />
           </div>

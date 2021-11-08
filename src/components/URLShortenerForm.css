@@ -109,6 +109,10 @@ a {
   margin-left: 30px;
   cursor: pointer;
 }
+.text-copied {
+  margin-left: 200px;
+  padding-top: 30px;
+}
 
 @media only screen and (max-width: 550px) {
   .form {
@@ -135,6 +139,9 @@ a {
     font-size: 15px;
   }
   .link-div {
-    margin-left: 45px;
+    margin-left: 60px;
+  }
+  .text-copied {
+    margin-left: 140px;
   }
 }

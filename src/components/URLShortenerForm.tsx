@@ -3,10 +3,12 @@ import { useState, useRef } from "react";
 import { SERVER_ENDPOINTS } from "../config";
 import "./URLShortenerForm.css";
 import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 function URLShortenerForm() {
   const [destination, setDestination] = useState();
   const divRef = useRef<HTMLAnchorElement>(null);
+  const [showText, setShowText] = useState(false)
   const [shortUrl, setShortUrl] = useState<{
     shortId: string;
   } | null>(null);
@@ -22,13 +24,10 @@ function URLShortenerForm() {
 
     setShortUrl(result);
   }
-  const copyUrl = () => {
-    const value = divRef.current?.innerText;
-    if (value) {
-      navigator.clipboard.writeText(value);
-      alert("Copied!");
-    }
-  };
+  var finalURL = `${window.location.origin}/${shortUrl?.shortId}`
+  const text = () => {
+    setShowText(true)
+  }
 
   return (
     <>
@@ -66,9 +65,15 @@ function URLShortenerForm() {
                
               </span>
             </p>
-            <ContentCopyRoundedIcon className="copyBtn" onClick={copyUrl}/>
+            <CopyToClipboard text={finalURL}>
+            <ContentCopyRoundedIcon className="copyBtn" onClick={text} />
+            </CopyToClipboard>
+            {/* <div></div> */}
+            
           </div>
+          
         )}
+        <div>{ showText ? <span className="text-copied">Copied!</span> : null }</div>
 
         <div className="name-div">
           <p className="name">

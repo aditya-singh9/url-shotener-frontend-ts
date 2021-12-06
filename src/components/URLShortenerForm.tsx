@@ -79,7 +79,7 @@ function URLShortenerForm() {
           <p className="name">
             Crafted by
             <a
-              href="https://github.com/aditya-singh9"
+              href="https://www.adityasingh.xyz/"
               target="_blank"
               rel="noreferrer"
             >

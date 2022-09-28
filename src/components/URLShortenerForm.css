@@ -81,7 +81,7 @@ a {
 
 .name-div {
   display: flex;
-  margin-left: 150px;
+  justify-content: center;
 }
 
 .head {
@@ -92,7 +92,7 @@ a {
 
 .head-div {
   display: flex;
-  margin-left: 150px;
+  justify-content: center;
 }
 
 .link {
@@ -130,10 +130,11 @@ a {
     margin-right: 8px;
   }
   .name-div {
-    margin-left: 80px;
+    justify-content: center;
+
   }
   .head-div {
-    margin-left: 80px;
+    justify-content: center;
   }
   .link {
     font-size: 15px;
@@ -145,3 +146,54 @@ a {
     margin-left: 140px;
   }
 }
+
+@media only screen and (max-width:300px) {
+  .form {
+    width: 260px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .input {
+    min-width: 5rem;
+    margin-left: 18px;
+  }
+  .button {
+    width: 75px;
+    font-size: 9px;
+    height: 40px;
+    padding: 0 8px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+  }
+  .name-div {
+    margin-left: 50px;
+  }
+  .head-div {
+    margin-left: 50px;
+  }
+  .link {
+    font-size: 15px;
+  }
+  .link-div {
+    margin-left: 15px;
+  }
+  .text-copied {
+    margin-left: 110px;
+  }
+  .head-div{
+    margin-left: 0px;
+    justify-content: center;
+  }
+  .head{
+    text-align: center;
+    font-size: 1.6rem;
+  }
+}
+.name-div{
+  margin-left: 0px;
+  justify-content: center;
+}
+.name{
+  font-size: 0.9rem;
+}
+  

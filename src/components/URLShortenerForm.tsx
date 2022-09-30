@@ -5,7 +5,7 @@ import "./URLShortenerForm.css";
 import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
 import CopyToClipboard from "react-copy-to-clipboard";
 import toast, { Toaster } from "react-hot-toast";
-
+  
 function URLShortenerForm() {
   const [destination, setDestination] = useState();
   const divRef = useRef<HTMLAnchorElement>(null);

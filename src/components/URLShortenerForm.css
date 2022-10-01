@@ -87,7 +87,7 @@ a {
 .head {
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .head-div {
@@ -112,6 +112,49 @@ a {
 .text-copied {
   margin-left: 200px;
   padding-top: 30px;
+}
+.forks_stars_div{
+  display:flex; 
+  justify-content: right;
+  align-items: center;
+  flex-wrap: wrap;
+  right:0;
+  box-sizing: border-box;
+  margin:0 2px 30px; 
+}
+
+.block_div{
+  display:flex; 
+  align-items: center;
+  width:23%; 
+  border: 2px solid rgb(27, 31, 36,0.15) ;
+  border-radius: 5px;
+  margin:0 5px; 
+  
+  /* position: relative;  */
+}
+.block_divLeft,.block_divRight{
+  width:80px; 
+  display: flex;
+  padding:5px; 
+  background-color: #f6f8fa;
+}
+.black_pipe{
+  width:3px; 
+  height: 34px;
+  background-color:rgb(27, 31, 36,0.15); 
+}
+.forks_stars_text{
+  margin-left: 5px;
+}
+
+.block_divLeftNum,.block_divRightNum{
+  width:35px;
+  padding-left: 9%;
+}
+.forkimg{
+   height:23px; 
+   width:19px; 
 }
 
 @media only screen and (max-width: 550px) {

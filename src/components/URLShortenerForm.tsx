@@ -57,6 +57,13 @@ function URLShortenerForm() {
           <div>
             <Toaster />
           </div>
+          
+  
+          <div className="head-div">
+            <p className="head">
+              Shorten <span>URLs</span>
+            </p>
+          </div>
           <div className="forks_stars_div">
             <div className="block_div">
               <div className="block_divLeft">
@@ -64,7 +71,7 @@ function URLShortenerForm() {
               </div>
               <div className="black_pipe"> </div>
               <div className="block_divLeftNum">
-                {stars}
+                <p className="block_divLeftNumText">{stars}</p>
               </div>
             </div>
             <div className="block_div">
@@ -73,16 +80,10 @@ function URLShortenerForm() {
               </div>
               <div className="black_pipe"> </div>
               <div className="block_divRightNum">
-                {forks}
+                <p>{forks}</p>
               </div>
             </div>
             
-          </div>
-  
-          <div className="head-div">
-            <p className="head">
-              Shorten <span>URLs</span>
-            </p>
           </div>
           <div className="outer">
             <form className="form" onSubmit={handleSubmit}>

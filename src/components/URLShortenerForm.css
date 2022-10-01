@@ -87,7 +87,7 @@ a {
 .head {
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .head-div {
@@ -126,15 +126,15 @@ a {
 .block_div{
   display:flex; 
   align-items: center;
-  width:23%; 
+  width:20%; 
   border: 2px solid rgb(27, 31, 36,0.15) ;
   border-radius: 5px;
-  margin:0 5px; 
-  min-width: 115px;
+  margin:0 7px; 
+  min-width: 105px;
   /* position: relative;  */
 }
 .block_divLeft,.block_divRight{
-  width:80px; 
+  width:70px; 
   display: flex;
   padding:5px; 
   background-color: #f6f8fa;
@@ -145,16 +145,23 @@ a {
   background-color:rgb(27, 31, 36,0.15); 
 }
 .forks_stars_text{
-  margin-left: 5px;
+  margin-left: 4px;
+  font-size: 15px;
 }
 
 .block_divLeftNum,.block_divRightNum{
-  width:35px;
-  padding-left: 9%;
+  width:33px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  /* padding: 5px; */
 }
 .forkimg{
    height:23px; 
-   width:19px; 
+   width:17px; 
+   margin-right: 2px;
 }
 
 @media only screen and (max-width: 550px) {

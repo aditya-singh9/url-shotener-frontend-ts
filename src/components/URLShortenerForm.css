@@ -115,7 +115,7 @@ a {
 }
 .forks_stars_div{
   display:flex; 
-  justify-content: right;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   right:0;
@@ -130,7 +130,7 @@ a {
   border: 2px solid rgb(27, 31, 36,0.15) ;
   border-radius: 5px;
   margin:0 5px; 
-  
+  min-width: 115px;
   /* position: relative;  */
 }
 .block_divLeft,.block_divRight{
@@ -230,6 +230,24 @@ a {
   .head{
     text-align: center;
     font-size: 1.6rem;
+  }
+  .block_div{
+    width:20%; 
+    min-width: 100px;
+  }
+  .forks_stars_text{
+    margin-left: 3px;
+  }
+  .forks_stars_div{
+    flex-direction: column;
+  }
+  .block_div{
+    margin:5px 0; 
+  }
+  .forkimg{
+    height:20px; 
+    width:16px; 
+    margin-top:2px;
   }
 }
 .name-div{

@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, CSSProperties } from "react";
 import { SERVER_ENDPOINTS } from "../config";
 import "./URLShortenerForm.css";
 import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import CopyToClipboard from "react-copy-to-clipboard";
 import toast, { Toaster } from "react-hot-toast";
+import PropagateLoader from "react-spinners/PropagateLoader";
+
 
 function URLShortenerForm() {
   const [destination, setDestination] = useState();
@@ -47,6 +49,13 @@ function URLShortenerForm() {
     getForksStarsCount();
   }, [])
 
+  const override: CSSProperties = {
+    display: "block",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0 auto",
+    borderColor: "red",
+  };
 
   if (!loading) {
 
@@ -143,7 +152,9 @@ function URLShortenerForm() {
       </>
     );
   } else {
-    return (<p>loading</p>)
+    return ( 
+       <PropagateLoader color="#0070f3" loading={loading} cssOverride={override} size={15} />
+    );
   }
 
 }

@@ -15,6 +15,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@ysms/ts-darkmode": "^1.3.0",
     "axios": "^0.21.1",
     "framer-motion": "^4.0.3",
     "react": "^17.0.2",

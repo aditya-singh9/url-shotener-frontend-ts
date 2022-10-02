@@ -5,7 +5,7 @@ import Darkmode from "@ysms/ts-darkmode";
 
 function App() {
   // This creates a dark mode toggle button on your web.
-  const darkmode = new Darkmode({ content: "🌓", buttonDarkColor: "#fff", buttonLightColor: "#141414" });
+  const darkmode = new Darkmode({ content: "🌓" });
   darkmode.activeDark();
   return (
     <Router>

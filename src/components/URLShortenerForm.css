@@ -174,6 +174,19 @@ a {
   margin-right: 2px;
 }
 
+.history{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0070f3;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.shortened{
+  display: block;
+}
+
 @media only screen and (max-width: 550px) {
   .form {
     width: 350px;

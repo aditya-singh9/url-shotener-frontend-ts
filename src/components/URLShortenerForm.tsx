@@ -15,6 +15,7 @@ function URLShortenerForm() {
   const [loading, setloading] = useState(true);
   const [forks, setforks] = useState(0);
   const [stars, setstars] = useState(0);
+  const [savedArr, setSavedArr] = useState<string[]>([""]);
   const [shortUrl, setShortUrl] = useState<{
     shortId: string;
   } | null>(null);
@@ -32,18 +33,30 @@ function URLShortenerForm() {
       });
 
     setShortUrl(result);
+    if(savedArr.length<5)
+    shortUrl&&setSavedArr((oldArray: string[])=>[...oldArray, finalURL]);
+    else
+    shortUrl&&setSavedArr((oldArray: string[]) => {
+      oldArray.shift();
+      oldArray.pop();
+      oldArray.push(finalURL);
+      return oldArray;
+    })
+    localStorage.setItem("savedURLs", JSON.stringify(savedArr));
   }
   var finalURL = `${window.location.origin}/${shortUrl?.shortId}`;
   const text = () => {
     toast.success("Copied!");
   };
 
+  const savedURLs = (savedArr.map(item => <a className="shortened" href={item} key={item} >{item} </a>))
 
   const getForksStarsCount = async () => {
     const { data } = await axios.get(`https://api.github.com/repos/aditya-singh9/url-shotener-frontend-ts`);
     setforks(data.forks_count);
     setstars(data.stargazers_count);
     setloading(false);
+    setSavedArr(()=>localStorage.getItem("savedURLs")?JSON.parse(localStorage.getItem("savedURLs")||""):[""]);
   };
   useEffect(() => {
     getForksStarsCount();
@@ -136,6 +149,10 @@ function URLShortenerForm() {
               </CopyToClipboard>
             </div>
           )}
+          <div className="history">
+            <p>Previously shortened URLs:</p>
+            {savedURLs}
+          </div>
           <div className="name-div">
             <p className="name">
               Crafted by

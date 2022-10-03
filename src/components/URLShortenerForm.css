@@ -30,7 +30,7 @@ body {
 }
 
 .input {
-  min-width: 20rem;
+  min-width: 17.5rem;
   border: none;
   outline: none;
   margin: 24px;
@@ -110,6 +110,14 @@ a {
   color: #0070f3;
   margin-left: 30px;
   cursor: pointer;
+}
+.clearBtn {
+  margin-right: 0.25rem;
+  justify-content: center;
+}
+
+.clearBtn:hover {
+  transform: scale(1.1);
 }
 
 .text-copied {
@@ -194,7 +202,6 @@ a {
 
   .name-div {
     justify-content: center;
-
   }
 
   .head-div {
@@ -214,7 +221,7 @@ a {
   }
 }
 
-@media only screen and (max-width:300px) {
+@media only screen and (max-width: 300px) {
   .form {
     width: 260px;
     margin-left: 10px;
@@ -286,6 +293,9 @@ a {
     height: 20px;
     width: 16px;
     margin-top: 2px;
+  }
+  .clearBtn {
+    font-size: 9px;
   }
 }
 

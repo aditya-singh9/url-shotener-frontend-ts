@@ -7,12 +7,14 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import CopyToClipboard from "react-copy-to-clipboard";
 import toast, { Toaster } from "react-hot-toast";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import PulseLoader  from "react-spinners/PulseLoader";
 
 
 function URLShortenerForm() {
   const [destination, setDestination] = useState();
   const divRef = useRef<HTMLAnchorElement>(null);
   const [loading, setloading] = useState(true);
+  const [backendLoading, setBackendLoading] = useState(false);
   const [forks, setforks] = useState(0);
   const [stars, setstars] = useState(0);
   const [shortUrl, setShortUrl] = useState<{
@@ -22,6 +24,7 @@ function URLShortenerForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setShortUrl(null);
+    setBackendLoading(true);
     const result = await axios
       .post(`${SERVER_ENDPOINTS}/api/url`, {
         destination,
@@ -31,6 +34,7 @@ function URLShortenerForm() {
         toast.error("Please enter a valid url.");
       });
 
+    setBackendLoading(false);
     setShortUrl(result);
   }
   var finalURL = `${window.location.origin}/${shortUrl?.shortId}`;
@@ -116,6 +120,17 @@ function URLShortenerForm() {
               </button>
             </form>
           </div>
+
+          {
+            backendLoading &&  (
+              <PulseLoader color="#0070f3" cssOverride={{
+                margin: "32px 0",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }} />
+            )
+          }
 
           {shortUrl && (
             <div className="link-div">

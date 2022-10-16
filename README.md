@@ -60,4 +60,4 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-This project is under [MIT](https://github.com/aditya-singh9/url-shotener-frontend-ts/blob/main/LICENSE) license.
+This projectt is under [MIT](https://github.com/aditya-singh9/url-shotener-frontend-ts/blob/main/LICENSE) license.

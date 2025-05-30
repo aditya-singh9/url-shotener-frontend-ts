@@ -1,2 +1,2 @@
 export const SERVER_ENDPOINTS =
-  process.env.REACT_APP_SERVER_ENDPOINT || "https://localhost:4000";
+  process.env.REACT_APP_SERVER_ENDPOINT || "http://localhost:4000";

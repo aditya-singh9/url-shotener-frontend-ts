@@ -155,7 +155,7 @@ function URLShortenerForm() {
             <p className="name">
               Crafted by
               <a
-                href="https://www.adityasingh.tech/"
+                href="https://adityasingh9.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
               >

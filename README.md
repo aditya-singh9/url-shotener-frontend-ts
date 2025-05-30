@@ -2,7 +2,7 @@
 
 > URL Shortener made using TypeScript, React and MongoDB
 
-<p align="center"><strong> Live demo <a href="https://www.limurl.ml/">here</a>! </strong></p>
+<p align="center"><strong> Live demo <a href="https://limurl.vercel.app/">here</a>! </strong></p>
 
 <p align="center"><strong> Backend Repository <a href="https://github.com/aditya-singh9/url-shotener-backend-ts">here</a>. </strong></p>
 
@@ -48,7 +48,7 @@ npm run build
 
 - Github: [@aditya-singh9](https://github.com/aditya-singh9)
 - LinkedIn: [@Aditya Singh](https://www.linkedin.com/in/aditya-singh9/)
-- Portfolio: [adityasingh.tech](https://adityasingh.tech)
+- Portfolio: [adityasingh.tech](https://adityasingh9.vercel.app/)
 
 ## 🤝 Contributing
 
